@@ -1,0 +1,4 @@
+# All PRs route to the project maintainer for review by default.
+# See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+* @apurvrdx1

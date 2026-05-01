@@ -201,7 +201,10 @@ case "$MODE" in
   auto)
     printf 'Auto-detecting installed harnesses...\n'
     any=0
+    # Skip "agents" inside the loop; it's installed unconditionally at the end
+    # as the universal cross-tool fallback.
     for p in $PLATFORMS; do
+      [ "$p" = "agents" ] && continue
       if is_detected "$p"; then
         install_one "$p"
         any=1
@@ -213,10 +216,7 @@ case "$MODE" in
       warn "No supported harness detected. Run with --all to install everywhere, or --platform NAME for one."
       exit 1
     fi
-    # Always lay down a universal pointer so future tools find it.
-    if [ "$DRY_RUN" -eq 0 ] && ! is_detected agents_already_installed 2>/dev/null; then
-      install_one "agents" || true
-    fi
+    install_one "agents"
     ;;
 esac
 

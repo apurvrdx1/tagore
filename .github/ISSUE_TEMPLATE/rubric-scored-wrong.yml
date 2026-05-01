@@ -1,0 +1,76 @@
+name: Rubric scored wrong
+description: Report a case where the 8-dimension scoring rubric produces a clearly wrong result
+title: "[Rubric] "
+labels: ["rubric", "scoring"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The rubric has 8 dimensions (5 mechanics + 3 substance) and a 56/80 pass threshold with subtotal floors. If a piece is obviously slop and passes, or obviously good and fails, that's a rubric bug.
+
+        The most useful reports include the original text, the score tagore gave it, and the score you think it should have gotten — with one-sentence reasoning per disagreed dimension.
+
+  - type: textarea
+    id: text
+    attributes:
+      label: Text under review
+      description: The full prose tagore scored. Don't truncate.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: tagore-score
+    attributes:
+      label: Score tagore produced
+      description: Paste the 8-dimension breakdown and total, exactly as output.
+      placeholder: |
+        Mechanics:
+        - Directness: 8
+        - Rhythm: 7
+        - Trust: 9
+        - Authenticity: 8
+        - Density: 8
+
+        Substance:
+        - Specificity: 5
+        - Restraint: 8
+        - Voice: 6
+
+        Total: 59/80 — passes
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-score
+    attributes:
+      label: Score you think it should have gotten
+      description: Same format. Only repeat the dimensions you disagree with — others can be omitted.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: reasoning
+    attributes:
+      label: Why the rubric got it wrong
+      description: One sentence per dimension where you disagree.
+      placeholder: |
+        Specificity: scored 5, should be 2 — every noun in the piece is a category, none are concrete things.
+        Voice: scored 6, should be 3 — there are no opinions, only synthesized observations.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: failure-type
+    attributes:
+      label: Failure type
+      options:
+        - "False pass (slop scored above 56)"
+        - "False fail (good prose scored below 56)"
+        - "Subtotal floor missed an obvious failure"
+        - "Diagnostic shortcut misclassified (clean but soulless / interesting but slop-shaped)"
+        - "Other"
+    validations:
+      required: true

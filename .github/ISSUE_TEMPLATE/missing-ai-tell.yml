@@ -1,0 +1,78 @@
+name: Missing AI tell
+description: Suggest a slop pattern the 29-pattern catalog should add
+title: "[Tell] "
+labels: ["catalog", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Found a pattern that tagore doesn't catch? Help expand the catalog.
+
+        Two things make a tell worth adding:
+        1. It appears in AI output far more often than in human writing
+        2. There's a clean rewrite rule that reliably fixes it
+
+  - type: input
+    id: pattern-name
+    attributes:
+      label: Pattern name
+      description: Short label for the pattern (e.g., "Editorial we", "Synthetic concession")
+      placeholder: e.g., Editorial we
+    validations:
+      required: true
+
+  - type: textarea
+    id: before
+    attributes:
+      label: Before example (slop)
+      description: Paste a real or synthetic example of the pattern in AI output. Multiple sentences are fine.
+      placeholder: |
+        We must consider the implications of this development.
+        We should ask ourselves what this means for the field.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: after
+    attributes:
+      label: After example (rewritten)
+      description: How would a human write the same idea?
+      placeholder: |
+        The implications matter. The field needs to ask what this means.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: rule
+    attributes:
+      label: Rewrite rule
+      description: One- or two-sentence statement of the rule someone could follow without seeing examples.
+      placeholder: e.g., Replace "we must / we should" rhetorical we with the actual subject. If no actual subject exists, the sentence is filler — cut it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: frequency
+    attributes:
+      label: Where you've seen this
+      description: Which model output, what kind of writing, how often? Helps prioritize.
+      placeholder: e.g., Claude 4.6 in essay drafts, GPT-4 in policy briefs. Roughly half of multi-paragraph essays.
+
+  - type: dropdown
+    id: catches-existing
+    attributes:
+      label: Does an existing pattern partially catch this?
+      description: Check the 29-pattern catalog in SKILL.md before filing.
+      options:
+        - "No — fully new"
+        - "Partially overlaps with one of patterns 1–29"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: overlap-detail
+    attributes:
+      label: If partial overlap, which pattern and why is it incomplete?

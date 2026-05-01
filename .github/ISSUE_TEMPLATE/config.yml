@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question or general discussion
+    url: https://github.com/apurvrdx1/tagore/discussions
+    about: Use Discussions for open-ended questions, "did anyone notice X" threads, and idea exchange. Use Issues for concrete bugs and pattern submissions.
