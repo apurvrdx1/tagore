@@ -3,3 +3,7 @@
 *.swo
 .idea/
 .vscode/
+
+# Private launch tracking — do not publish
+LAUNCH.md
+
