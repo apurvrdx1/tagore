@@ -1,9 +1,13 @@
 # Tagore
 
+![Tagore](assets/social-preview.png)
+
 > *"The butterfly counts not months but moments, and has time enough."*
 > — Rabindranath Tagore
 
-A skill for Claude Code, OpenCode, GitHub Copilot CLI, OpenAI Codex CLI, Gemini CLI, and Goose that rewrites AI-generated prose so it sounds like a human wrote it. Named in homage to Rabindranath Tagore, whose prose carried what frontier models reach for and miss: a point of view, specificity over abstraction, and restraint over puffery.
+A skill for Claude Code, OpenCode, GitHub Copilot CLI, OpenAI Codex CLI, Gemini CLI, and Goose. Run `/tagore` on the AI-drafted prose you just generated; it rewrites the text to sound human and scores how close it got. Named in homage to Rabindranath Tagore, whose prose carried what frontier models reach for and miss: a point of view, specificity over abstraction, and restraint over puffery.
+
+[![Buy Me A Coffee](https://img.buymeacoffee.com/button-api/?text=Buy+me+a+coffee&emoji=&slug=apurvrdx&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/apurvrdx)
 
 ## What it does
 
