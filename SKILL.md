@@ -25,8 +25,8 @@ allowed-tools:
   - Glob
   - AskUserQuestion
 sources:
-  - humanizer 2.5.1 (Wikipedia "Signs of AI writing")
-  - stop-slop (Hardik Pandya, https://hvpandya.com)
+  - humanizer 2.5.1 by blader (https://github.com/blader/humanizer), based on Wikipedia "Signs of AI writing"
+  - stop-slop by Hardik Pandya (https://github.com/hardikpandya/stop-slop)
 ---
 
 # Tagore
@@ -643,7 +643,7 @@ If any line is unchecked, return to Stage 1.
 
 Built from two complementary skills:
 
-- **humanizer 2.5.1** — based on [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup. Source of the 29-pattern catalog and the personality/soul section.
-- **stop-slop** by Hardik Pandya (https://hvpandya.com). Source of the 8 core principles, the 12-item pre-delivery checklist, and the 1–10 scoring rubric.
+- **[humanizer](https://github.com/blader/humanizer)** by blader, based on [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup). Source of the 29-pattern catalog and the personality/soul section.
+- **[stop-slop](https://github.com/hardikpandya/stop-slop)** by Hardik Pandya (https://hvpandya.com). Source of the 8 core principles, the 12-item pre-delivery checklist, and the 1–10 scoring rubric.
 
 Key insight from Wikipedia: "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases." This skill exists because writing that is "the most statistically likely thing" is exactly what writing is *not* supposed to be.

@@ -24,8 +24,8 @@ Tagore is a synthesis of two complementary skills:
 
 | Source | Contribution |
 |--------|--------------|
-| [humanizer](https://github.com/Hardik-Pandya/humanizer) (Wikipedia "Signs of AI writing") | 29-pattern catalog, voice calibration, personality/soul section, self-audit loop, full worked example |
-| [stop-slop](https://github.com/hvpandya/stop-slop) by Hardik Pandya | 8 core principles, 12-item pre-delivery checklist, scoring rubric |
+| [humanizer](https://github.com/blader/humanizer) by [blader](https://github.com/blader) (based on Wikipedia "Signs of AI writing") | 29-pattern catalog, voice calibration, personality/soul section, self-audit loop, full worked example |
+| [stop-slop](https://github.com/hardikpandya/stop-slop) by [Hardik Pandya](https://hvpandya.com) | 8 core principles, 12-item pre-delivery checklist, scoring rubric |
 
 humanizer is a deep catalog with a pipeline. stop-slop is a tight rulebook with a scoring gate. Tagore fuses them into a single workflow and adds three substance dimensions (Specificity, Restraint, Voice) that neither skill scored on its own.
 
@@ -171,8 +171,8 @@ MIT. See [LICENSE](LICENSE).
 ## Credits
 
 Built from two excellent prior works:
-- **humanizer 2.5.1**, based on [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup.
-- **stop-slop** by [Hardik Pandya](https://hvpandya.com).
+- **[humanizer](https://github.com/blader/humanizer)** by [blader](https://github.com/blader), based on [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup).
+- **[stop-slop](https://github.com/hardikpandya/stop-slop)** by [Hardik Pandya](https://hvpandya.com).
 
 Both are MIT-licensed; this merge is too.
 
