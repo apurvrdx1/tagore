@@ -1,0 +1,16 @@
+Tagore
+Copyright (c) 2026 Apurv Ray
+
+This product includes work adapted from the following open-source projects:
+
+1. humanizer 2.5.1
+   Based on Wikipedia:Signs of AI writing, maintained by WikiProject AI Cleanup.
+   Original Wikipedia content licensed under CC BY-SA 4.0.
+   The skill formulation redistributed under MIT terms with attribution.
+   Source: https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
+
+2. stop-slop
+   Author: Hardik Pandya (https://hvpandya.com)
+   Licensed under MIT.
+
+The full license terms for Tagore are in LICENSE.
