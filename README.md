@@ -184,6 +184,12 @@ Issues and PRs welcome. The most valuable contributions:
 - Voice calibration improvements for non-English text
 - Translations of the skill into other languages
 
+## Support
+
+If tagore saved you from sounding like a chatbot in a doc that mattered, drop a coffee. The catalog grows from real submissions, and your support buys time to read them, score them, and ship them in the next release.
+
+[![Buy Me A Coffee](https://img.buymeacoffee.com/button-api/?text=Buy+me+a+coffee&emoji=&slug=apurvrdx&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/apurvrdx)
+
 ## Reference
 
 > "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
