@@ -10,7 +10,7 @@
 #   ./install.sh --uninstall      # remove tagore from every detected harness
 #
 # Supported --platform values:
-#   claude    OpenCode  copilot   codex   gemini   goose   agents (universal)
+#   claude    OpenCode  copilot   codex   gemini   goose   hermes   agents (universal)
 #
 # After install, a universal symlink is dropped at ~/.agents/skills/tagore so
 # that any agent honoring the cross-tool convention picks it up automatically.
@@ -102,9 +102,11 @@ resolve_source() {
 # codex:     ~/.codex               ; install to ~/.codex/skills/tagore
 # gemini:    ~/.gemini              ; install to ~/.gemini/skills/tagore
 # goose:     ~/.config/goose        ; install to ~/.config/goose/skills/tagore
+# hermes:    ~/.hermes              ; install to ~/.hermes/skills/writing/tagore
+#                                     (Hermes scans skills as <category>/<name>/SKILL.md)
 # agents:    universal              ; install/symlink to ~/.agents/skills/tagore
 
-PLATFORMS="claude opencode copilot codex gemini goose agents"
+PLATFORMS="claude opencode copilot codex gemini goose hermes agents"
 
 target_for() {
   case "$1" in
@@ -114,6 +116,12 @@ target_for() {
     codex)    printf '%s/.codex/skills/%s' "$HOME" "$SKILL_NAME" ;;
     gemini)   printf '%s/.gemini/skills/%s' "$HOME" "$SKILL_NAME" ;;
     goose)    printf '%s/.config/goose/skills/%s' "$HOME" "$SKILL_NAME" ;;
+    # Hermes (NousResearch/hermes-agent) scans skill directories as
+    # <category>/<name>/SKILL.md — so we install under a `writing/` category
+    # rather than directly under skills/. The HERMES_HOME env var overrides
+    # the default ~/.hermes location when set (e.g. /paperclip/.hermes in
+    # containerized Hermes deployments).
+    hermes)   printf '%s/skills/writing/%s' "${HERMES_HOME:-$HOME/.hermes}" "$SKILL_NAME" ;;
     agents)   printf '%s/.agents/skills/%s' "$HOME" "$SKILL_NAME" ;;
     *) return 1 ;;
   esac
@@ -127,6 +135,7 @@ is_detected() {
     codex)    [ -d "$HOME/.codex" ] || command -v codex >/dev/null 2>&1 ;;
     gemini)   [ -d "$HOME/.gemini" ] || command -v gemini >/dev/null 2>&1 ;;
     goose)    [ -d "$HOME/.config/goose" ] || command -v goose >/dev/null 2>&1 ;;
+    hermes)   [ -d "${HERMES_HOME:-$HOME/.hermes}" ] || command -v hermes >/dev/null 2>&1 ;;
     agents)   true ;; # always available — universal fallback
     *) return 1 ;;
   esac

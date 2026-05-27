@@ -5,7 +5,7 @@
 > *"The butterfly counts not months but moments, and has time enough."*
 > — Rabindranath Tagore
 
-A skill for Claude Code, OpenCode, GitHub Copilot CLI, OpenAI Codex CLI, Gemini CLI, and Goose. Run `/tagore` on the AI-drafted prose you just generated; it rewrites the text to sound human and scores how close it got. Named in homage to Rabindranath Tagore, whose prose carried what frontier models reach for and miss: a point of view, specificity over abstraction, and restraint over puffery.
+A skill for Claude Code, OpenCode, GitHub Copilot CLI, OpenAI Codex CLI, Gemini CLI, Goose, and Hermes (NousResearch agent runtime). Run `/tagore` on the AI-drafted prose you just generated; it rewrites the text to sound human and scores how close it got. Named in homage to Rabindranath Tagore, whose prose carried what frontier models reach for and miss: a point of view, specificity over abstraction, and restraint over puffery.
 
 [![Buy Me A Coffee](https://img.buymeacoffee.com/button-api/?text=Buy+me+a+coffee&emoji=&slug=apurvrdx&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/apurvrdx)
 
@@ -45,7 +45,7 @@ The installer detects every supported harness on your system and installs Tagore
 curl -fsSL https://raw.githubusercontent.com/apurvrdx1/tagore/main/install.sh | bash -s -- --platform claude
 ```
 
-Supported `--platform` values: `claude`, `opencode`, `copilot`, `codex`, `gemini`, `goose`, `agents` (universal).
+Supported `--platform` values: `claude`, `opencode`, `copilot`, `codex`, `gemini`, `goose`, `hermes`, `agents` (universal).
 
 ### Install for every detected harness
 
@@ -65,6 +65,7 @@ Pick your harness and copy the `tagore/` directory (with `SKILL.md` inside) into
 | OpenAI Codex CLI | `~/.codex/skills/tagore/` | `.agents/skills/tagore/` |
 | Gemini CLI | `~/.gemini/skills/tagore/` | — |
 | Goose | `~/.config/goose/skills/tagore/` | — |
+| Hermes (NousResearch) | `~/.hermes/skills/writing/tagore/` (or `$HERMES_HOME/skills/writing/tagore/`) | `.hermes/skills/writing/tagore/` |
 | Cursor | — | `.cursor/rules/tagore/` |
 | Windsurf | — | `.windsurf/rules/tagore/` |
 | Universal (cross-tool) | `~/.agents/skills/tagore/` | `.agents/skills/tagore/` |
@@ -109,6 +110,24 @@ codex
 ```
 
 Codex auto-loads everything under `~/.codex/skills/`; no reload step required.
+
+### Hermes (NousResearch)
+
+Hermes scans `$HERMES_HOME/skills/` (default `~/.hermes/skills/`) for category-grouped skills as `<category>/<name>/SKILL.md`. The installer drops Tagore under the `writing/` category so it's discoverable alongside other writing skills.
+
+Invoke by name in an agent task:
+
+```
+Use the tagore skill to humanize this draft: [paste text]
+```
+
+For containerized Hermes deployments (e.g. NousResearch reference image, MRTek's PaperClip/Hermes stack), set `HERMES_HOME` before running the installer so it targets the in-container path:
+
+```bash
+HERMES_HOME=/paperclip/.hermes ./install.sh --platform hermes
+```
+
+If the host has the parent-repo skill-overlay convention (e.g. MRTek's `apps/hermes/overrides/skills/playbooks/`), copy the `tagore/` directory there instead — the container entrypoint syncs overlays into `$HERMES_HOME/skills/` on each restart with `cp -rn`, so the agent picks up the skill across deploys.
 
 ### Gemini CLI / Goose
 
